@@ -5,16 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orson Mestanza</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Línea separadora */
+        .separator {
+            border-top: 3px solid #000;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        /* Estilos para la sección de investigaciones */
+        .research-item {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .research-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .research-item .text-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .research-item:hover img {
+            opacity: 0;
+        }
+
+        .research-item:hover .text-overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
-<body class="container d-flex flex-column align-items-center justify-content-center min-vh-100 text-center">
-    <img src="images/foto03.jpeg" class="img-fluid rounded-circle border border-3 shadow-lg" width="200">
+<body class="container text-center">
+    <img src="images/foto01.jpeg" class="img-fluid rounded-circle border border-3 shadow-lg" width="200">
     <h1>Orson Mestanza</h1>
     <h4>Master</h4>
     <p>Biology, Bioinformatics, Biostatistics. Thanks for visiting my website.</p>
+
+    <!-- Botones -->
     <div class="d-flex justify-content-center gap-2 mt-3">
-    <a href="https://github.com/OrsonMM" class="btn btn-dark rounded-pill">GitHub</a>
-    <a href="https://www.linkedin.com/in/orson-mestanza-447935154/" class="btn btn-primary rounded-pill">LinkedIn</a>
-    <a href="https://orcid.org/0000-0001-7268-0496" class="btn btn-success rounded-pill">ORCID</a>
-</div>
+        <a href="https://github.com/OrsonMM" class="btn btn-dark rounded-pill">GitHub</a>
+        <a href="https://www.linkedin.com/in/orson-mestanza-447935154/" class="btn btn-primary rounded-pill">LinkedIn</a>
+        <a href="https://orcid.org/0000-0001-7268-0496" class="btn btn-success rounded-pill">ORCID</a>
+    </div>
+
+    <!-- Línea separadora -->
+    <div class="separator"></div>
+
+    <!-- Sección de Investigaciones -->
+    <h2>Research</h2>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+        <div class="research-item">
+            <img src="images/corr_plt.PNG" alt="Research 1">
+            <div class="Metagenomics study">Project A</div>
+        </div>
+        <div class="research-item">
+            <img src="images/ordination_plot.PNG" alt="Research 2">
+            <div class="Paper subbmission">Project B</div>
+        </div>
+    </div>
+
 </body>
 </html>
