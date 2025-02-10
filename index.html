@@ -35,6 +35,11 @@
         }
 
         /* Estilos para la sección de investigaciones */
+        .research-link {
+            text-decoration: none; /* Quita el subrayado */
+            display: inline-block; /* Mantiene alineación correcta */
+        }
+
         .research-item {
             position: relative;
             width: 220px;
@@ -105,19 +110,29 @@
     <!-- Sección de Investigaciones -->
     <h2 class="mb-4">Research</h2>
     <div class="d-flex justify-content-center gap-4">
-        <div class="research-item">
-            <img src="images/corr_plot.PNG" alt="Research 1">
-            <div class="text-overlay">Project A</div>
-        </div>
-        <div class="research-item">
-            <img src="images/ordination_plot.PNG" alt="Research 2">
-            <div class="text-overlay">Project B</div>
-        </div>
-        <div class="research-item">
-            <img src="images/Paper_1.gif" alt="Research 2">
-            <div class="text-overlay">Research related to spread and predominance of SARS-Cov-2 in Peru (C3.7) - (10.1002/jmv.27261) </div>
-        </div>
+        <!-- Research Item 1 -->
+        <a href="https://example.com/project-a" target="_blank" class="research-link">
+            <div class="research-item">
+                <img src="images/corr_plot.PNG" alt="Research 1">
+                <div class="text-overlay">Project A</div>
+            </div>
+        </a>
+
+        <!-- Research Item 2 -->
+        <a href="https://example.com/project-b" target="_blank" class="research-link">
+            <div class="research-item">
+                <img src="images/ordination_plot.PNG" alt="Research 2">
+                <div class="text-overlay">Project B</div>
+            </div>
+        </a>
+
+        <!-- Research Item 3 -->
+        <a href="https://doi.org/10.1002/jmv.27261" target="_blank" class="research-link">
+            <div class="research-item">
+                <img src="images/Paper_1.gif" alt="Research 3">
+                <div class="text-overlay">Research on SARS-Cov-2 in Peru (C3.7)</div>
+            </div>
+        </a>
     </div>
 </body>
 </html>
-
