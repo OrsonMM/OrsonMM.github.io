@@ -6,14 +6,11 @@
     <title>Orson Mestanza</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Línea separadora */
         .separator {
             border-top: 3px solid #000;
             width: 50%;
             margin: 30px auto;
         }
-
-        /* Estilos del título */
         h4 {
             font-family: 'Poppins', sans-serif;
             font-size: 18px;
@@ -23,28 +20,21 @@
             margin: 0 auto;
             line-height: 1.6;
         }
-
-        /* Botones redondeados con efecto hover */
         .btn-custom {
             border-radius: 30px;
             transition: all 0.3s ease-in-out;
         }
-
         .btn-custom:hover {
             transform: scale(1.05);
         }
-
-        /* Estilos para la sección de investigaciones */
         .research-link {
             text-decoration: none;
             display: inline-block;
         }
-
         .research-item {
             position: relative;
             width: 100%;
             max-width: 250px;
-            height: auto;
             aspect-ratio: 1 / 1;
             overflow: hidden;
             cursor: pointer;
@@ -52,11 +42,9 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
         }
-
         .research-item:hover {
             transform: scale(1.05);
         }
-
         .research-item img {
             width: 100%;
             height: 100%;
@@ -66,7 +54,6 @@
             transition: opacity 0.3s ease-in-out;
             background: #fff;
         }
-
         .research-item .text-overlay {
             position: absolute;
             top: 0;
@@ -85,43 +72,38 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
-
         .research-item:hover img {
             opacity: 0;
         }
-
         .research-item:hover .text-overlay {
             opacity: 1;
         }
-
     </style>
 </head>
 <body class="container text-center mt-4">
+    <button id="languageToggle" class="btn btn-secondary mb-3">Español</button>
 
     <img src="images/foto03.jpeg" class="img-fluid rounded-4 border border-3 shadow-lg" width="180">
     <h1 class="mt-3">Orson Mestanza</h1>
-    <h4>Passionate life sciences researcher integrating genomic, environmental, biochemical, and social data to explore the evolutionary processes shaping living organisms.</h4>
-    <p class="mt-3">Biology, Bioinformatics, Biostatistics. Thanks for visiting my website.</p>
+    <h4 id="bio">Passionate life sciences researcher integrating genomic, environmental, biochemical, and social data to explore the evolutionary processes shaping living organisms.</h4>
+    <p id="bio-subtitle" class="mt-3">Biology, Bioinformatics, Biostatistics. Thanks for visiting my website.</p>
 
-    <!-- Botones -->
     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
         <a href="https://github.com/OrsonMM" class="btn btn-dark btn-custom">GitHub</a>
         <a href="https://www.linkedin.com/in/orson-mestanza-447935154/" class="btn btn-primary btn-custom">LinkedIn</a>
         <a href="https://orcid.org/0000-0001-7268-0496" class="btn btn-success btn-custom">ORCID</a>
     </div>
 
-    <!-- Línea separadora -->
     <div class="separator"></div>
 
-    <!-- Sección de Investigaciones -->
-    <h2 class="mb-4">Research</h2>
+    <h2 id="research-title" class="mb-4">Research</h2>
 
     <div class="row justify-content-center">
         <div class="col-6 col-md-4 d-flex justify-content-center mb-3">
             <a href="https://doi.org/10.3390/antibiotics11091170" target="_blank" class="research-link">
                 <div class="research-item">
                     <img src="images/Paper_3.gif" alt="Research 1">
-                    <div class="text-overlay">Genomic analyses of Salmonella Typhimurium from 14 cities of Peru isolated from 2000 to 2017</div>
+                    <div class="text-overlay" id="research-1">Genomic analyses of Salmonella Typhimurium from 14 cities of Peru isolated from 2000 to 2017</div>
                 </div>
             </a>
         </div>
@@ -130,7 +112,7 @@
             <a href="https://doi.org/10.1016/j.envpol.2019.03.056" target="_blank" class="research-link">
                 <div class="research-item">
                     <img src="images/Paper_2.gif" alt="Research 2">
-                    <div class="text-overlay">Metagenomic approach to understand the xenobiotics degradation in Colombia Mangrove</div>
+                    <div class="text-overlay" id="research-2">Metagenomic approach to understand the xenobiotics degradation in Colombia Mangrove</div>
                 </div>
             </a>
         </div>
@@ -139,16 +121,48 @@
             <a href="https://doi.org/10.1002/jmv.27261" target="_blank" class="research-link">
                 <div class="research-item">
                     <img src="images/Paper_1.gif" alt="Research 3">
-                    <div class="text-overlay">Genomic study of variant Lambda (C.37) of SARS-Cov-2 from Peru</div>
+                    <div class="text-overlay" id="research-3">Genomic study of variant Lambda (C.37) of SARS-Cov-2 from Peru</div>
                 </div>
             </a>
         </div>
     </div>
 
-    <!-- Línea separadora -->
     <div class="separator"></div>
-    <h2 class="mb-4">Project</h2>
-    <h4>Coming soon a discussion forum in Bioinformatics, biostatistics, machine learning, and so on</h4>
+    <h2 id="project-title" class="mb-4">Project</h2>
+    <h4 id="project-description">Coming soon: a discussion forum on Bioinformatics, Biostatistics, Machine Learning, and more.</h4>
     <div style="height: 50px;"></div>
+
+    <script>
+        const texts = {
+            en: {
+                bio: "Passionate life sciences researcher integrating genomic, environmental, biochemical, and social data to explore the evolutionary processes shaping living organisms.",
+                bioSubtitle: "Biology, Bioinformatics, Biostatistics. Thanks for visiting my website.",
+                researchTitle: "Research",
+                research1: "Genomic analyses of Salmonella Typhimurium from 14 cities of Peru isolated from 2000 to 2017",
+                research2: "Metagenomic approach to understand the xenobiotics degradation in Colombia Mangrove",
+                research3: "Genomic study of variant Lambda (C.37) of SARS-Cov-2 from Peru",
+                projectTitle: "Project",
+                projectDescription: "Coming soon: a discussion forum on Bioinformatics, Biostatistics, Machine Learning, and more.",
+                button: "Español"
+            },
+            es: {
+                bio: "Apasionado investigador en ciencias de la vida, integrando datos genómicos, ambientales, bioquímicos y sociales para explorar los procesos evolutivos que dan forma a los organismos vivos.",
+                bioSubtitle: "Biología, Bioinformática, Bioestadística. Gracias por visitar mi sitio web.",
+                researchTitle: "Investigación",
+                research1: "Análisis genómico de Salmonella Typhimurium de 14 ciudades de Perú aisladas entre 2000 y 2017",
+                research2: "Enfoque metagenómico para comprender la degradación de xenobióticos en los manglares de Colombia",
+                research3: "Estudio genómico de la variante Lambda (C.37) de SARS-Cov-2 en Perú",
+                projectTitle: "Proyecto",
+                projectDescription: "Próximamente: un foro de discusión sobre Bioinformática, Bioestadística, Aprendizaje Automático y más.",
+                button: "English"
+            }
+        };
+
+        document.getElementById("languageToggle").addEventListener("click", function() {
+            let lang = document.documentElement.lang === "en" ? "es" : "en";
+            document.documentElement.lang = lang;
+            Object.keys(texts[lang]).forEach(id => document.getElementById(id)?.textContent = texts[lang][id]);
+        });
+    </script>
 </body>
 </html>
