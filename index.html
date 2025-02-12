@@ -160,15 +160,9 @@
         </div>
     </div>
 
-    <!-- Script para el contador de visitas -->
-    <script>
-        fetch('https://api.countapi.xyz/update/orson-website/visits/?amount=1')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("visit-counter").innerText = "Visitors: " + data.value;
-            })
-            .catch(error => console.error('Error loading visit counter:', error));
-    </script>
+    <!-- Línea separadora -->
+    <div class="separator"></div>
+
 
 </body>
 </html>
